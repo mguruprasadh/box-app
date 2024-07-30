@@ -1,0 +1,8 @@
+<div [style.width.px]="size" [style.height.px]="size" class="box">
+    <span class="box-id">{{ id }}</span>
+    <button class="box-delete" (click)="onDelete()">X</button>
+    <div class="box-content">
+      <a class="title-anchor" (click)="onTitle()">{{ title }}</a>
+    </div>
+</div>
+  

@@ -1,0 +1,52 @@
+ getBoxes(): Observable<Box[]> {
+    return this.http.get<Box[]>(this.apiUrl);
+  }
+
+  getBox(id: number): Observable<Box> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Box>(url)
+      .pipe(
+        catchError(this.handleError<Box>(`getBox id=${id}`))
+      );
+  }
+
+  addBox(box: Box): Observable<Box> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post<Box>(this.apiUrl, box, { headers })
+      .pipe(
+        catchError(this.handleError<Box>('addBox'))
+      );
+  }
+
+  updateBox(id: number, box: Box): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.put(url, box, { headers })
+      .pipe(
+        catchError(this.handleError<any>('updateBox'))
+      );
+  }
+
+  // deleteBox(id: number): Observable<Box> {
+  //   const url = `${this.apiUrl}/${id}`;
+  //   return this.http.delete<Box>(url)
+  //     .pipe(
+  //       catchError(this.handleError<Box>('deleteBox'))
+  //     );
+  // }
+  deleteBox(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+  reorderBoxIds(): Observable<any> {
+    return this.http.post(`${this.apiUrl}/reorder`, {});
+  }
+
+  truncate(): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/truncate`);
+  }
+  private handleError<T>(_operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
+  }

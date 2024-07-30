@@ -1,0 +1,59 @@
+.box {
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #0000FF; /* Blue background color */
+    position: relative; /* Establish positioning context for the delete button */
+    /* margin: 10px; */ /* Uncomment if needed */
+    float: left;  
+  }
+  .box-id {
+    position: absolute; /* Position the ID absolutely within the box */
+    top: 5px; /* Distance from the top of the box */
+    left: 5px; /* Distance from the left edge of the box */
+    color: #0e0d0d; /* White color for better contrast against the blue background */
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold;
+    cursor:pointer;
+  }
+  .box-id:hover{
+    color: #f10202; /* White color for better contrast against the blue background */
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold;
+  }
+
+  
+  .box-delete {
+    position: absolute; /* Position the delete button absolutely within the box */
+    top: 5px; /* Distance from the top of the box */
+    right: 5px; /* Distance from the right edge of the box */
+    background: none; /* Remove default button styling */
+    border: none;
+    color: #f00; /* Red color for the delete icon */
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  .title-anchor{
+    cursor:pointer;
+    text-decoration: none;
+    color:#0e0d0d;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  .box-delete:hover {
+    position: absolute; /* Position the delete button absolutely within the box */
+    top: 5px; /* Distance from the top of the box */
+    right: 5px; /* Distance from the right edge of the box */
+    background-color: #f2f2f2; /* Remove default button styling */
+    border: none;
+    color: rgb(6, 0, 0); /* Red color for the delete icon */
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  

@@ -1,0 +1,17 @@
+<form (ngSubmit)="onAddBox()" #boxForm="ngForm" class="inline-form">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="newBox.title" required>
+  </div>
+  <div class="form-group">
+    <label for="size">Size:</label>
+    <input type="number" id="size" name="size" [(ngModel)]="newBox.size" required>
+  </div>
+  <button type="submit" [disabled]="!boxForm.form.valid">Add Box</button>
+</form>
+
+<div class="box-container" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="center">
+    <app-box *ngFor="let box of boxes" [id]="box.id" [title]="box.title" [size]="box.size" (delete)="deleteBox(box.id)" (titleAnchor)="onTitleAnchor(box.id)"></app-box>
+</div>
+
+  

@@ -1,0 +1,98 @@
+//app.get('/boxes', (req, res) => {
+  //   db.query('SELECT * FROM boxes', (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     res.json(results);
+  //   });
+  // });
+  // app.get('/boxes/:id', (req, res) => {
+  //   const { id } = req.params;
+  //   db.query('SELECT * FROM boxes WHERE id = ?', [id], (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     if (results.length === 0) {
+  //       res.status(404).json({ error: 'Box not found' });
+  //       return;
+  //     }
+  //     res.json(results[0]);
+  //   });
+  // });
+  // app.post('/boxes', (req, res) => {
+  //   const { title, size } = req.body;
+  //   db.query('INSERT INTO boxes (title, size) VALUES (?, ?)', [title, size], (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     res.status(201).json({ id: results.insertId, title, size });
+  //   });
+  // });
+  // app.put('/boxes/:id', (req, res) => {
+  //   const { id } = req.params;
+  //   const { title, size } = req.body;
+  //   db.query('UPDATE boxes SET title = ?, size = ? WHERE id = ?', [title, size, id], (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     if (results.affectedRows === 0) {
+  //       res.status(404).json({ error: 'Box not found' });
+  //       return;
+  //     }
+  //     res.json({ id, title, size });
+  //   });
+  // });
+  // app.delete('/boxes/:id', (req, res) => {
+  //   const { id } = req.params;
+  //   db.query('DELETE FROM boxes WHERE id = ?', [id], (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     if (results.affectedRows === 0) {
+  //       res.status(404).json({ error: 'Box not found' });
+  //       return;
+  //     }
+  //     res.status(204).send();
+  //   });
+  // });
+  // app.delete('/boxes/:id', (req, res) => {
+  //   const { id } = req.params;
+  //   db.query('DELETE FROM boxes WHERE id = ?', [id], (err, results) => {
+  //     if (err) {
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     if (results.affectedRows === 0) {
+  //       res.status(404).json({ error: 'Box not found' });
+  //       return;
+  //     }
+  
+  //     // Reassign IDs
+  //     db.query('UPDATE boxes SET id = id - 1 WHERE id > ?', [id], (err) => {
+  //       if (err) {
+  //         res.status(500).json({ error: err.message });
+  //         return;
+  //       }
+  //       res.status(204).send();
+  //     });
+  //   });
+  // });
+  // app.delete('/boxes/truncate', (_req, res) => {
+  //   console.log('Received request to truncate boxes table');
+  //   db.query('TRUNCATE  boxes', (err) => {
+  //     if (err) {
+  //       console.error('Error truncating table:', err);
+  //       res.status(500).json({ error: err.message });
+  //       return;
+  //     }
+  //     console.log('Table truncated successfully');
+  //     res.status(204).send();
+  //   });
+  // });
+  // 
+

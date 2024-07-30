@@ -1,0 +1,42 @@
+.inline-form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between form elements */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between label and input */
+}
+
+.form-group label {
+  margin-right: 5px; /* Space between label and input */
+}
+
+button {
+  margin-left: 10px; /* Space between input fields and button */
+}
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    // grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-right:0.5%; /* Adjust spacing between items */
+    border: none;
+    margin-top: 1%;
+}
+/* Extra small screens (mobile devices) */
+@media (min-width: 500px) and (max-width: 959px){
+    .box-container {
+      flex-direction: column; /* Stack items vertically */
+      gap: 5px;
+      align-items: center;   
+      margin: 0 auto;
+      -ms-flex-item-align: center;
+ 
+    }
+}
+  
+ 
+  
